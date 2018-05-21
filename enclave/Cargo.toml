@@ -1,0 +1,17 @@
+[package]
+name = "Sealdatasampleenclave"
+version = "0.9.8"
+authors = ["Baidu"]
+
+[lib]
+name = "sealdatasampleenclave"
+crate-type = ["staticlib"]
+
+[features]
+default = []
+
+[target.'cfg(not(target_env = "sgx"))'.dependencies]
+sgx_types = { path = "/root/sgx/sgx_types" }
+sgx_tseal = { path = "/root/sgx/sgx_tseal" }
+sgx_tstd = { path = "/root/sgx/sgx_tstd" }
+sgx_rand = { path = "/root/sgx/sgx_rand" }
